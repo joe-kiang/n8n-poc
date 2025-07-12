@@ -1,0 +1,14 @@
+version: v1
+
+replicaCount: 1
+
+#Ativar/Desativar Configmap/Seleção de Ambiente
+configmap:
+  env: dev
+  enabled: true
+#####
+
+#Definição do Secret
+secret:
+  enabled: true
+#####

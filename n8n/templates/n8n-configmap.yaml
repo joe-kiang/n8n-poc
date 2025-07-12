@@ -1,0 +1,23 @@
+{{- if .Values.configmap.enabled }}
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  labels:
+    app: n8n
+    version: v1
+  name: n8n-configmap
+  namespace: n8n
+data:
+  DB_POSTGRESDB_PORT: "5432"
+  {{- if eq .Values.configmap.env "prd" }}
+  N8N_HOST: 
+  NODE_ENV: production
+  WEBHOOK_URL: 
+  DB_POSTGRESDB_HOST: 
+  {{- else }}
+  N8N_HOST: 
+  NODE_ENV: development
+  WEBHOOK_URL: 
+  DB_POSTGRESDB_HOST: 
+  {{- end }}
+{{- end }}

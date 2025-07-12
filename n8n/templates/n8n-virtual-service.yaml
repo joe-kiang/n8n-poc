@@ -1,0 +1,21 @@
+apiVersion: networking.istio.io/v1
+kind: VirtualService
+metadata:
+  name: n8n
+  namespace: n8n
+spec:
+  gateways:
+    - default/frontend-gateway
+  hosts:
+    - '*'
+  http:
+    - match:
+        - uri:
+            prefix: /
+      rewrite:
+        uri: /
+      route:
+        - destination:
+            host: n8n.n8n.svc.cluster.local
+            port:
+              number: 80
