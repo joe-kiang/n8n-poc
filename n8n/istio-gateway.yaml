@@ -1,0 +1,54 @@
+apiVersion: networking.istio.io/v1
+kind: Gateway
+metadata:
+  annotations:
+    objectset.rio.cattle.io/applied: >-
+      {"apiVersion":"networking.istio.io/v1beta1","kind":"Gateway","metadata":{"annotations":{"objectset.rio.cattle.io/id":"ff64a271-0d72-4d8b-82c2-60887baa5e71"},"labels":{"objectset.rio.cattle.io/hash":"e8c6d1331dda74b583186d816b2331fd7fd543ab"},"name":"frontend-gateway","namespace":"default"},"spec":{"selector":{"istio":"external-ingressgateway"},"servers":[{"hosts":["*"],"port":{"name":"http","number":80,"protocol":"HTTP"},"tls":{"httpsRedirect":true}},{"hosts":["*"],"port":{"name":"https","number":443,"protocol":"HTTP"}}]}}
+    objectset.rio.cattle.io/id: ff64a271-0d72-4d8b-82c2-60887baa5e71
+  creationTimestamp: '2022-01-11T18:14:05Z'
+  generation: 1
+  labels:
+    objectset.rio.cattle.io/hash: e8c6d1331dda74b583186d816b2331fd7fd543ab
+  managedFields:
+    - apiVersion: networking.istio.io/v1beta1
+      fieldsType: FieldsV1
+      fieldsV1:
+        f:metadata:
+          f:annotations:
+            .: {}
+            f:objectset.rio.cattle.io/applied: {}
+            f:objectset.rio.cattle.io/id: {}
+          f:labels:
+            .: {}
+            f:objectset.rio.cattle.io/hash: {}
+        f:spec:
+          .: {}
+          f:selector:
+            .: {}
+            f:istio: {}
+          f:servers: {}
+      manager: agent
+      operation: Update
+      time: '2022-01-11T18:14:05Z'
+  name: frontend-gateway
+  namespace: default
+  resourceVersion: '135853127'
+  uid: 049d3266-66d9-42fe-a2fd-b53ecf40dfb6
+spec:
+  selector:
+    istio: external-ingressgateway
+  servers:
+    - hosts:
+        - '*'
+      port:
+        name: http
+        number: 80
+        protocol: HTTP
+      tls:
+        httpsRedirect: true
+    - hosts:
+        - '*'
+      port:
+        name: https
+        number: 443
+        protocol: HTTP
